@@ -22,3 +22,10 @@ def hottest(readings):
     return max(readings, key=lambda device: device['temp'])
 
 print(f"Hottest Device: {hottest(readings)['name']}, Temperature: {hottest(readings)['temp']}")
+
+def to_status(device):
+    status = "online" if device['online'] else "offline"
+    return {"name": device['name'], "status": status, "temperature": device['temp']}
+
+# Example usage:
+print(to_status(readings[3]))
