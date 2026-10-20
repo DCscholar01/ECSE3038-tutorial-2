@@ -11,3 +11,10 @@ def list_devices(readings):
         print(f"Device: {device['name']}, Temperature: {device['temp']}")
 
 list_devices(readings)
+
+def average_temp(readings):
+    total = sum(device['temp'] for device in readings)
+    return total / len(readings)
+
+print(f"Average Temperature: {average_temp(readings)}")
+
